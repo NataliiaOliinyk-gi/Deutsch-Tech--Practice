@@ -3,7 +3,7 @@ import { useState, createContext } from "react";
 
 export const languageContext = createContext('en');
 
-const TempProvider = ({ children }) => {
+const LanguageProvider = ({ children }) => {
 
     const [language, setLanguage] = useState('en');
 
@@ -18,4 +18,4 @@ const TempProvider = ({ children }) => {
     )
 };
 
-export default TempProvider;
+export default LanguageProvider;

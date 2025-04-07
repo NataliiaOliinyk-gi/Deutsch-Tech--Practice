@@ -1,6 +1,6 @@
 
 
-import TempProvider from '../../contextProvader'
+import LanguageProvider from '../../context/LanguageProvider'
 
 import Header from '../Header/Header'
 import MainContent from '../MainContent/MainContent'
@@ -16,14 +16,14 @@ function App() {
   //   setLanguage(prevLanguage => (prevLanguage === "en" ? "ru" : "en"))
   // }
 
-  
+
   return (
     <>
-      <TempProvider>
+      <LanguageProvider>
         <Header />
         <MainContent />
         <Footer />
-      </TempProvider>
+      </LanguageProvider>
 
     </>
   )

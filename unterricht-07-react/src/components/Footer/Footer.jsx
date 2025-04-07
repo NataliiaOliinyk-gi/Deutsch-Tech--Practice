@@ -1,10 +1,14 @@
 
+import { useContext } from "react";
+import { languageContext } from "../../context/LanguageProvider";
 
 const Footer = () => {
+
+    const {language} = useContext(languageContext);
+
     return (
         <footer>
-            <h2>Footer</h2>
-            <h2>Футер</h2>
+            <h2>{language === 'en' ? 'Footer' : 'Футер'}</h2>
         </footer>
     )
 };
