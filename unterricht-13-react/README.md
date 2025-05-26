@@ -19,7 +19,7 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
     email: '',
     password: ''
     });
-    ```
+    
 
     - Jedes Attribut (username, email, password) wird an das entsprechende Eingabefeld gebunden.
 
