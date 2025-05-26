@@ -13,13 +13,13 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
 
 2.  Initialisierung des Formularzustands - Verwenden Sie useState, um ein State-Objekt zu erstellen, z. B.:
 
-   ```javascript
-    const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: ''
-    });
-    
+````javascript
+const [formData, setFormData] = useState({
+username: '',
+email: '',
+password: ''
+});
+
 
     - Jedes Attribut (username, email, password) wird an das entsprechende Eingabefeld gebunden.
 
@@ -55,3 +55,4 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
     - Testen Sie das Eingeben von Werten in die Felder: Überprüfen Sie, ob die Werte korrekt gespeichert werden und ob totalChars korrekt aktualisiert wird.
 
 **Ergebnis:** Ein Registrierungsformular, das bei jeder Eingabe automatisch die gesamte Zeichenanzahl mithilfe der Memoisierung (Hooks) berechnet.
+````
