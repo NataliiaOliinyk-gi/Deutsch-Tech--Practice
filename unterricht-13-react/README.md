@@ -40,12 +40,7 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
 
     - Verwenden Sie useMemo, um die gesamte Zeichenanzahl zu berechnen:
 
-     <pre> ```javascript
-     const totalChars = useMemo(() => {
-     const { username, email, password } = formData;
-     return username.length + email.length + password.length;
-     }, [formData]);
-     ``` </pre>
+    <pre> ```javascript const [formData, setFormData] = useState({ username: '', email: '', password: '' }); ``` </pre>
 
     - Dieses Memo wird nur neu berechnet, wenn sich formData ändert.
 
