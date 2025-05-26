@@ -13,13 +13,13 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
 
 2.  Initialisierung des Formularzustands - Verwenden Sie useState, um ein State-Objekt zu erstellen, z. B.:
 
-    <pre> ```javascript
+   ```javascript
     const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: ''
     });
-    ``` </pre>
+    ```
 
     - Jedes Attribut (username, email, password) wird an das entsprechende Eingabefeld gebunden.
 
