@@ -13,13 +13,13 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
 
 2.  Initialisierung des Formularzustands - Verwenden Sie useState, um ein State-Objekt zu erstellen, z. B.:
 
-````javascript
+```javascript
 const [formData, setFormData] = useState({
-username: '',
-email: '',
-password: ''
+    username: '',
+    email: '',
+    password: ''
 });
-
+```
 
     - Jedes Attribut (username, email, password) wird an das entsprechende Eingabefeld gebunden.
 
@@ -27,12 +27,12 @@ password: ''
 
     - Schreiben Sie eine Funktion handleChange(e), die das jeweilige Feld im Zustand aktualisiert:
 
-    <pre> ```javascript
-    const handleChange = useCallback((e) => {
+```javascript
+const handleChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    }, []);
-    ``` </pre>
+}, []);
+```   
 
     - Beachten Sie, dass useCallback (ohne oder mit [setFormData] als Abhängigkeit) dafür sorgt, dass der Handler nicht bei jedem Rendern neu erstellt wird.
 
@@ -40,7 +40,12 @@ password: ''
 
     - Verwenden Sie useMemo, um die gesamte Zeichenanzahl zu berechnen:
 
-    <pre> ```javascript const [formData, setFormData] = useState({ username: '', email: '', password: '' }); ``` </pre>
+```javascript 
+const totalChars = useMemo(() => {
+    const { username, email, password } = formData;
+    return username.length + email.length + password.length;
+}, [formData]); 
+``` 
 
     - Dieses Memo wird nur neu berechnet, wenn sich formData ändert.
 
@@ -55,4 +60,3 @@ password: ''
     - Testen Sie das Eingeben von Werten in die Felder: Überprüfen Sie, ob die Werte korrekt gespeichert werden und ob totalChars korrekt aktualisiert wird.
 
 **Ergebnis:** Ein Registrierungsformular, das bei jeder Eingabe automatisch die gesamte Zeichenanzahl mithilfe der Memoisierung (Hooks) berechnet.
-````
