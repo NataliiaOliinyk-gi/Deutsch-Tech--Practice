@@ -13,7 +13,7 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
 
 2.  Initialisierung des Formularzustands - Verwenden Sie useState, um ein State-Objekt zu erstellen, z. B.:
 
-    <pre> ``` 
+    <pre> ```javascript
     const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -27,7 +27,7 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
 
     - Schreiben Sie eine Funktion handleChange(e), die das jeweilige Feld im Zustand aktualisiert:
 
-    <pre> ```
+    <pre> ```javascript
     const handleChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -40,7 +40,7 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
 
     - Verwenden Sie useMemo, um die gesamte Zeichenanzahl zu berechnen:
 
-     <pre> ```
+     <pre> ```javascript
      const totalChars = useMemo(() => {
      const { username, email, password } = formData;
      return username.length + email.length + password.length;
