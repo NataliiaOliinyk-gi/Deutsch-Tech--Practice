@@ -11,15 +11,15 @@ und **useMemo**, um den Zustand zu verwalten und die Memoisierung zu ermögliche
     - Importieren Sie React und die benötigten Hooks: useState, useCallback, useMemo.
     - Erstellen Sie eine funktionale Komponente RegistrationForm.
 
-2.  Initialisierung des Formularzustands - Verwenden Sie useState, um ein State-Objekt zu erstellen, z. B.:
+2. Initialisierung des Formularzustands – Verwenden Sie useState, um ein State-Objekt zu erstellen:
 
-```javascript
-const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: ''
-});
-```
+    ```javascript
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        password: ''
+    });
+    ```
 
     - Jedes Attribut (username, email, password) wird an das entsprechende Eingabefeld gebunden.
 
@@ -27,12 +27,12 @@ const [formData, setFormData] = useState({
 
     - Schreiben Sie eine Funktion handleChange(e), die das jeweilige Feld im Zustand aktualisiert:
 
-```javascript
-const handleChange = useCallback((e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-}, []);
-```   
+    ```javascript
+    const handleChange = useCallback((e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    }, []);
+    ```   
 
     - Beachten Sie, dass useCallback (ohne oder mit [setFormData] als Abhängigkeit) dafür sorgt, dass der Handler nicht bei jedem Rendern neu erstellt wird.
 
@@ -40,12 +40,12 @@ const handleChange = useCallback((e) => {
 
     - Verwenden Sie useMemo, um die gesamte Zeichenanzahl zu berechnen:
 
-```javascript 
-const totalChars = useMemo(() => {
-    const { username, email, password } = formData;
-    return username.length + email.length + password.length;
-}, [formData]); 
-``` 
+    ```javascript 
+    const totalChars = useMemo(() => {
+        const { username, email, password } = formData;
+        return username.length + email.length + password.length;
+    }, [formData]); 
+    ``` 
 
     - Dieses Memo wird nur neu berechnet, wenn sich formData ändert.
 
